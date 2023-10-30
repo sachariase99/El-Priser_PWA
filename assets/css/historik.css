@@ -1,0 +1,60 @@
+#chooseDay {
+    margin: auto;
+    margin-top: 49px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    width: 305px;
+    height: 46px;
+    background-color: var(--nav);
+    box-shadow: 0px 0px 8px 2px rgba(91, 91, 91, 0.25);
+}
+
+#chooseDay #dateInput {
+    width: 150px;
+    font-size: 14px;
+    color: var(--whiteish);
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0 0 0 30px;
+}
+
+#chooseDay div {
+    color: var(--yellowish);
+    width: 19px;
+    height: 22px;
+    font-size: 19px;
+    cursor: pointer;
+    padding: 0 40px 0 0;
+}
+
+#currentDayBox {
+    text-align: center;
+    color: var(--whiteish);
+    margin-top: 53px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.historyDiv {
+    margin: auto;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav);
+    width: 305px;
+    height: 46px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px 2px rgba(91, 91, 91, 0.25);
+}
+
+.historyDiv p:first-child {
+    padding: 0 0 0 30px;
+    color: var(--whiteish);
+}
+
+.historyDiv p:last-child {
+    padding: 0 50px 0 0;
+}

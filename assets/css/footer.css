@@ -1,0 +1,22 @@
+/* FOOTER START */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--nav);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 22px 0;
+}
+
+footer p {
+    color: var(--whiteish);
+}
+
+footer p span {
+    color: var(--yellowish);
+}
+/* FOOTER END */

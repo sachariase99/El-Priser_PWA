@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('footer.css');
+@import url('navbar.css');
+@import url('ligenu.css');
+@import url('oversigt.css');
+@import url('historik.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+:root {
+    --nav: #201E1E;
+    --bg: #27282B;
+    --yellowish: #55eC20;
+    --whiteish: #EBEBEB;
+}
+
+section a {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+}
+
+section a .fa-gear {
+    color: var(--yellowish);
+    font-size: 22px;
+    margin-top: 60px;
+}

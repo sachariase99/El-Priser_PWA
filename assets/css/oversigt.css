@@ -1,0 +1,76 @@
+section #priceData .high-low {
+    display: flex;
+    justify-content: center;
+}
+
+.high-low-price {
+    display: flex;
+    justify-content: center;
+    color: var(--whiteish);
+    text-transform: uppercase;
+    gap: 22px;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 19px;
+}
+
+#lowest, #highest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--nav);
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px 2px rgba(91, 91, 91, 0.25) inset;
+    margin-top: 23px;
+}
+
+#lowestText, #highestText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    z-index: 1;
+    color: var(--whiteish);
+    border: 1px dashed #55EC20;
+    height: 96px;
+    width: 96px;
+    border-radius: 50%;
+}
+
+#lowestText:last-child {
+    font-size: 16px;
+}
+
+#lowestText:first-child {
+    font-size: 10px;
+}
+
+#highestText:last-child {
+    font-size: 16px;
+}
+
+#highestText:first-child {
+    font-size: 10px;
+}
+
+section #priceData #oversigt .oversigtText {
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--nav);
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px 2px rgba(91, 91, 91, 0.25);
+    margin-bottom: 10px;
+    width: 305px;
+    height: 36px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+section #priceData #oversigt .oversigtText p:first-child {
+    color: var(--whiteish);
+    font-size: 15px;
+}

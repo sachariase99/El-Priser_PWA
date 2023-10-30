@@ -1,0 +1,76 @@
+/* SECTION START OVERSIGT */
+section h2 {
+    color: var(--whiteish);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 23px;
+    font-weight: 300;
+}
+
+section #priceData {
+    position: relative;
+    color: var(--yellowish);
+}
+
+section #ligenu {
+    position: relative;
+    top: 172px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section #ligenu .wheel {
+    position: absolute;
+}
+
+section #ligenu .outer-wheel {
+    height: 277px;
+    width: 277px;
+    border-radius: 277px;
+    background: #201E1E;
+    box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.25) inset, 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+section #ligenu .middle-wheel {
+    height: 244px;
+    width: 244px;
+    fill: #1E1E1E;
+    stroke-width: 1px;
+    stroke: rgba(85, 236, 32, 0.50);
+}
+
+section #ligenu .inner-wheel {
+    height: 217px;
+    width: 217px;
+    fill: #1E1E1E;
+    stroke-width: 1px;
+    stroke: rgba(85, 236, 32, 0.75);
+}
+
+section #ligenu .ligenuText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+section #ligenu .ligenuText p:first-child {
+    font-size: 32px;
+}
+
+section #ligenu .ligenuText p:last-child {
+    font-size: 16px;
+}
+section #priceData .priceDataText {
+    position: absolute;
+    top: 390px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+}
+/* SECTION END OVERSIGT */
