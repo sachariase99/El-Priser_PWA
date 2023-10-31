@@ -7,7 +7,7 @@ section h2 {
     font-weight: 300;
 }
 
-section #priceData {
+section #ligenuData {
     position: relative;
     color: var(--yellowish);
 }
@@ -66,7 +66,7 @@ section #ligenu .ligenuText p:first-child {
 section #ligenu .ligenuText p:last-child {
     font-size: 16px;
 }
-section #priceData .priceDataText {
+section #ligenuData .priceDataText {
     position: absolute;
     top: 390px;
     left: 50%;

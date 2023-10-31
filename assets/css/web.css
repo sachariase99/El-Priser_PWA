@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('footer.css');
+@import url('navbar.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+:root {
+    --nav: #201E1E;
+    --bg: #27282B;
+    --yellowish: #55eC20;
+    --whiteish: #EBEBEB;
+}
+
+nav .fa-gear {
+    color: var(--yellowish);
+    font-size: 22px;
+    padding: 0 29px 0 0;
+}
+
+.gridElement-web {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    margin-top: 130px;
+}
+
+/* SECTION START LIGENU */
+section h2 {
+    color: var(--whiteish);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 23px;
+    font-weight: 300;
+}
+
+section .ligenuData-web {
+    position: relative;
+    color: var(--yellowish);
+}
+
+section .ligenu-web {
+    position: relative;
+    top: 172px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section .ligenu-web .wheel {
+    position: absolute;
+}
+
+section .ligenu-web .outer-wheel {
+    height: 277px;
+    width: 277px;
+    border-radius: 277px;
+    background: #201E1E;
+    box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.25) inset, 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+section .ligenu-web .middle-wheel {
+    height: 244px;
+    width: 244px;
+    fill: #1E1E1E;
+    stroke-width: 1px;
+    stroke: rgba(85, 236, 32, 0.50);
+}
+
+section .ligenu-web .inner-wheel {
+    height: 217px;
+    width: 217px;
+    fill: #1E1E1E;
+    stroke-width: 1px;
+    stroke: rgba(85, 236, 32, 0.75);
+}
+
+section .ligenu-web .ligenuText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+section .ligenu-web .ligenuText p:first-child {
+    font-size: 32px;
+}
+
+section .ligenu-web .ligenuText p:last-child {
+    font-size: 16px;
+}
+section .ligenuData-web .priceDataText {
+    position: absolute;
+    top: 380px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+}
+
+.sectionOne-web {
+    position: relative;
+}
+
+.sectionOne-web .high-low-web {
+    position: absolute;
+    top: 452px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sectionOne-web .high-low-price-web {
+    position: absolute;
+    top: 590px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+}
+
+.footer-info-web {
+    position: absolute;
+    left: 50%;
+    top: 707px;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    padding: 22px 0;
+    max-width: 70%;
+    text-align: start;
+}
+
+.footer-info-web p {
+    color: var(--whiteish);
+}
+
+.footer-info-web p span {
+    color: var(--yellowish);
+}
+/* SECTION END LIGENU */
+
+/* SECTION START OVERSIGT */
+.sectionTwo-web h2 {
+    margin-bottom: 63px;
+}
+section .oversigtData-web .high-low-web {
+    display: flex;
+    justify-content: center;
+}
+
+.high-low-price-web {
+    display: flex;
+    justify-content: center;
+    color: var(--whiteish);
+    text-transform: uppercase;
+    gap: 22px;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 19px;
+}
+
+.lowest-web, .highest-web {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--nav);
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px 2px rgba(91, 91, 91, 0.25) inset;
+    margin-top: 23px;
+}
+
+.lowestText-web, .highestText-web {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    z-index: 1;
+    color: var(--whiteish);
+    border: 1px dashed #55EC20;
+    height: 96px;
+    width: 96px;
+    border-radius: 50%;
+}
+
+.lowestText-web:last-child {
+    font-size: 16px;
+}
+
+.lowestText-web:first-child {
+    font-size: 10px;
+}
+
+.highestText-web:last-child {
+    font-size: 16px;
+}
+
+.highestText-web:first-child {
+    font-size: 10px;
+}
+
+section .oversigtData-web #oversigt .oversigtText {
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--nav);
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px 2px rgba(91, 91, 91, 0.25);
+    margin-bottom: 10px;
+    width: 305px;
+    height: 36px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+section .oversigtData-web #oversigt .oversigtText p:first-child {
+    color: var(--whiteish);
+    font-size: 15px;
+}
+
+section .oversigtData-web #oversigt .oversigtText p:last-child {
+    color: var(--yellowish);
+    font-size: 15px;
+}
+/* SECTION END OVERSIGT */
+
+/* SECTION START HISTORIK */
+.chooseDay-web {
+    margin: auto;
+    margin-top: 63px;
+    margin-bottom: 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    width: 305px;
+    height: 46px;
+    background-color: var(--nav);
+    box-shadow: 0px 0px 8px 2px rgba(91, 91, 91, 0.25);
+}
+
+.chooseDay-web #dateInput {
+    width: 150px;
+    font-size: 14px;
+    color: var(--whiteish);
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0 0 0 30px;
+}
+
+.chooseDay-web div {
+    color: var(--yellowish);
+    width: 19px;
+    height: 22px;
+    font-size: 19px;
+    cursor: pointer;
+    padding: 0 40px 0 0;
+}
+
+#currentDayBox {
+    text-align: center;
+    color: var(--whiteish);
+    margin-top: 53px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.historyDiv {
+    margin: auto;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav);
+    width: 305px;
+    height: 36px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px 2px rgba(91, 91, 91, 0.25);
+}
+
+.historyDiv p:first-child {
+    padding: 0 0 0 30px;
+    color: var(--whiteish);
+}
+
+.historyDiv p:last-child {
+    padding: 0 50px 0 0;
+    color: var(--yellowish);
+}
+/* SECTION END HISTORIK */
