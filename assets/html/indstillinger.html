@@ -1,78 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ElPrisen.nu - Lige nu</title>
-    <link rel="icon" href="../images/mainIcon.ico">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/indstillinger.js" defer></script>
-    <script src="https://kit.fontawesome.com/2330c46f9a.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElPrisen.nu - Lige nu</title>
+  <link rel="icon" href="../images/mainIcon.ico">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/indstillinger.js" defer></script>
+  <script src="https://kit.fontawesome.com/2330c46f9a.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <nav>
-        <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 47 47" fill="none">
-            <g filter="url(#filter0_di_2_982)">
-              <circle cx="23.5" cy="23.5" r="17.5" fill="#201E1E"/>
-              <circle cx="23.5" cy="23.5" r="15.5" stroke="#55EC20" stroke-opacity="0.5" stroke-width="4" stroke-dasharray="2 2"/>
-            </g>
-            <path d="M23.6547 19.9595L23.4394 20.6155H24.1298H28.1187C28.3724 20.6155 28.5289 20.8914 28.4026 21.1074L28.4015 21.1093L22.3179 31.6174C22.2572 31.7221 22.1477 31.7827 22.0316 31.7827C21.8216 31.7827 21.6637 31.5858 21.7128 31.3783C21.7128 31.3783 21.7128 31.3782 21.7128 31.3782L23.3062 24.6552L23.4521 24.0399H22.8197H18.7167C18.5187 24.0399 18.3636 23.8645 18.3897 23.6654C18.3898 23.6653 18.3898 23.6652 18.3898 23.6651L19.4957 15.3705C19.4957 15.3704 19.4957 15.3704 19.4957 15.3703C19.5177 15.2077 19.658 15.0849 19.8229 15.0849H24.8004C25.0092 15.0849 25.1684 15.2838 25.1215 15.4902L23.6547 19.9595Z" fill="#201E1E" stroke="#55EC20"/>
-            <defs>
-              <filter id="filter0_di_2_982" x="0" y="0" width="47" height="47" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                <feOffset/>
-                <feGaussianBlur stdDeviation="3"/>
-                <feComposite in2="hardAlpha" operator="out"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_982"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_982" result="shape"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect2_innerShadow_2_982"/>
-                <feOffset/>
-                <feGaussianBlur stdDeviation="4"/>
-                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0.358333 0 0 0 0 0.358333 0 0 0 0 0.358333 0 0 0 0.25 0"/>
-                <feBlend mode="normal" in2="shape" result="effect2_innerShadow_2_982"/>
-              </filter>
-            </defs>
-          </svg>
-        <ul>
-            <li><a href="../../index.html">Oversigt</a></li>
-            <li><a href="ligenu.html">Lige nu</a></li>
-            <li><a href="historik.html">Historik</a></li>
-        </ul>
-    </nav>
-    <section>
-        <h2 class="Indstillinger-h2">Indstillinger</h2>
-        <div id="settings_moms">
-          <p>Priser inkl. moms</p>
-          <div id="moms_toggle_btn">
-            <div id="moms_toggle_switch"></div>
-          </div>
+  <nav>
+    <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 47 47" fill="none">
+      <g filter="url(#filter0_di_2_982)">
+        <circle cx="23.5" cy="23.5" r="17.5" fill="#201E1E" />
+        <circle cx="23.5" cy="23.5" r="15.5" stroke="#55EC20" stroke-opacity="0.5" stroke-width="4"
+          stroke-dasharray="2 2" />
+      </g>
+      <path
+        d="M23.6547 19.9595L23.4394 20.6155H24.1298H28.1187C28.3724 20.6155 28.5289 20.8914 28.4026 21.1074L28.4015 21.1093L22.3179 31.6174C22.2572 31.7221 22.1477 31.7827 22.0316 31.7827C21.8216 31.7827 21.6637 31.5858 21.7128 31.3783C21.7128 31.3783 21.7128 31.3782 21.7128 31.3782L23.3062 24.6552L23.4521 24.0399H22.8197H18.7167C18.5187 24.0399 18.3636 23.8645 18.3897 23.6654C18.3898 23.6653 18.3898 23.6652 18.3898 23.6651L19.4957 15.3705C19.4957 15.3704 19.4957 15.3704 19.4957 15.3703C19.5177 15.2077 19.658 15.0849 19.8229 15.0849H24.8004C25.0092 15.0849 25.1684 15.2838 25.1215 15.4902L23.6547 19.9595Z"
+        fill="#201E1E" stroke="#55EC20" />
+      <defs>
+        <filter id="filter0_di_2_982" x="0" y="0" width="47" height="47" filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha" />
+          <feOffset />
+          <feGaussianBlur stdDeviation="3" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_982" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_982" result="shape" />
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha" />
+          <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect2_innerShadow_2_982" />
+          <feOffset />
+          <feGaussianBlur stdDeviation="4" />
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <feColorMatrix type="matrix" values="0 0 0 0 0.358333 0 0 0 0 0.358333 0 0 0 0 0.358333 0 0 0 0.25 0" />
+          <feBlend mode="normal" in2="shape" result="effect2_innerShadow_2_982" />
+        </filter>
+      </defs>
+    </svg>
+    <ul>
+      <li><a href="../../index.html">Oversigt</a></li>
+      <li><a href="ligenu.html">Lige nu</a></li>
+      <li><a href="historik.html">Historik</a></li>
+    </ul>
+  </nav>
+  <section>
+    <h2 class="Indstillinger-h2">Indstillinger</h2>
+    <div id="settings_moms">
+      <p>Priser inkl. moms</p>
+      <div id="moms_toggle_btn">
+        <div id="moms_toggle_switch"></div>
+      </div>
+    </div>
+    <div id="settings_alarm">
+      <p>Laveste pris alarm</p>
+      <div id="alarm_toggle_btn">
+        <div id="alarm_toggle_switch"></div>
+      </div>
+    </div>
+    <div id="settings_region">
+      <p>Vælg region</p>
+      <div class="chooseRegionDropdown" id="regionDropdown">
+        <p>Vælg Region</p><svg id="rotatable-svg" xmlns="http://www.w3.org/2000/svg" width="11" height="7"
+          viewBox="0 0 11 7" fill="none">
+          <path
+            d="M5.41905 0.161872L9.89463 4.63747C10.1105 4.85333 10.1105 5.20328 9.89463 5.41911L9.37262 5.94112C9.15714 6.1566 8.8079 6.15702 8.59191 5.94204L5.02822 2.39504L1.46455 5.94204C1.24856 6.15701 0.899323 6.1566 0.683837 5.94112L0.161833 5.41911C-0.0540208 5.20326 -0.0540208 4.8533 0.161833 4.63747L4.63739 0.161871C4.85324 -0.0539589 5.2032 -0.0539588 5.41905 0.161872Z"
+            fill="#55EC20" />
+        </svg>
+        <div class="dropdown-content">
+          <p class="region_east">Region øst</p>
+          <p class="region_west">Region vest</p>
         </div>
-        <div id="settings_alarm">
-          <p>Laveste pris alarm</p>
-          <div id="alarm_toggle_btn">
-            <div id="alarm_toggle_switch"></div>
-          </div>
-        </div>
-        <div id="settings_region">
-          <p>Vælg region</p>
-          <div class="chooseRegionDropdown" id="regionDropdown">
-            <p>Vælg Region</p><svg  id="rotatable-svg" xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none">
-              <path d="M5.41905 0.161872L9.89463 4.63747C10.1105 4.85333 10.1105 5.20328 9.89463 5.41911L9.37262 5.94112C9.15714 6.1566 8.8079 6.15702 8.59191 5.94204L5.02822 2.39504L1.46455 5.94204C1.24856 6.15701 0.899323 6.1566 0.683837 5.94112L0.161833 5.41911C-0.0540208 5.20326 -0.0540208 4.8533 0.161833 4.63747L4.63739 0.161871C4.85324 -0.0539589 5.2032 -0.0539588 5.41905 0.161872Z" fill="#55EC20"/>
-            </svg>
-            <div class="dropdown-content">
-                <p class="region_east">Region øst</p>
-                <p class="region_west">Region vest</p>
-            </div>
-        </div>
-        </div>
-    </section>
-    <footer>
-        <p>Priserne er <span>ex. moms</span> og afgifter</p>
-        <p>Du vises lige nu priserne for <span>Øst Danmark</span></p>
-    </footer>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>Priserne er <span>ex. moms</span> og afgifter</p>
+    <p>Du vises lige nu priserne for <span>Øst Danmark</span></p>
+  </footer>
 </body>
+
 </html>

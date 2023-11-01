@@ -9,13 +9,15 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/ligenu.js" defer></script>
+    <script src="assets/js/settingsModal.js" defer></script>
+    <script src="assets/js/indstillinger.js" defer></script>
 
     <script src="https://kit.fontawesome.com/2330c46f9a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="mobile">
-        <nav>
+    <div id="container">
+        <nav class="navbar-mobile">
             <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 47 47" fill="none">
                 <g filter="url(#filter0_di_2_982)">
                     <circle cx="23.5" cy="23.5" r="17.5" fill="#201E1E" />
@@ -55,37 +57,7 @@
                 <li><a href="assets/html/historik.html">Historik</a></li>
             </ul>
         </nav>
-        <section>
-            <a href="assets/html/indstillinger.html"><i class="fa-solid fa-gear"></i></a>
-            <h2>Oversigt</h2>
-            <div id="oversigtData">
-                <div class="high-low" id="highLow">
-                    <div id="lowest">
-                        <div id="lowestText">
-                            <p>PR. KWH</p>
-                        </div>
-                    </div>
-                    <div id="highest">
-                        <div id="highestText">
-                            <p>PR. KWH</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="high-low-price">
-                    <p>Laveste Pris</p>
-                    <p>Højeste Pris</p>
-                </div>
-            </div>
-        </section>
-        <footer>
-            <p>Priserne er <span>ex. moms</span> og afgifter</p>
-            <p>Du vises lige nu priserne for <span>Øst Danmark</span></p>
-        </footer>
-    </div>
-
-
-    <div class="web">
-        <nav>
+        <nav class="navbar-web">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 47 47" fill="none">
                 <g filter="url(#filter0_di_2_982)">
                     <circle cx="23.5" cy="23.5" r="17.5" fill="#201E1E" />
@@ -119,83 +91,132 @@
                     </filter>
                 </defs>
             </svg>
-            <i class="fa-solid fa-gear"></i>
+            <div id="settingsWeb"><i class="fa-solid fa-gear"></i></div>
         </nav>
-        <div class="pageWrapper">
+            <a class="settings_mobile" href="assets/html/indstillinger.html"><i class="fa-solid fa-gear"></i></a>
             <div class="gridElement-web">
-                <!-- LIGENU -->
-                <div class="sectionOne-web">
-                    <section>
-                        <h2>Elprisen lige nu</h2>
-                        <div id="ligenuData" class="ligenuData-web">
-                            <div id="ligenu" class="ligenu-web">
-                                <div class="outer-wheel wheel">
-                                </div>
-                                <div class="middle-wheel wheel">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="244" height="244"
-                                        viewBox="0 0 244 244" fill="none">
-                                        <circle cx="122" cy="122" r="122" fill="#1E1E1E" />
-                                        <circle cx="122" cy="122" r="121.5" stroke="#55EC20" stroke-opacity="0.5"
-                                            stroke-dasharray="4 4" />
-                                    </svg>
-                                </div>
-                                <div class="inner-wheel wheel">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="217" height="217"
-                                        viewBox="0 0 217 217" fill="none">
-                                        <circle cx="108.5" cy="108.5" r="108.5" fill="#1E1E1E" />
-                                        <circle cx="108.5" cy="108.5" r="108" stroke="#55EC20" stroke-opacity="0.75"
-                                            stroke-dasharray="4 4" />
-                                    </svg>
-                                </div>
+            <section class="sectionOne-web">
+                <section>
+                    <h2>Elprisen lige nu</h2>
+                    <div id="ligenuData" class="ligenuData-web">
+                        <div id="ligenu" class="ligenu-web">
+                            <div class="outer-wheel wheel">
+                            </div>
+                            <div class="middle-wheel wheel">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="244" height="244" viewBox="0 0 244 244"
+                                    fill="none">
+                                    <circle cx="122" cy="122" r="122" fill="#1E1E1E" />
+                                    <circle cx="122" cy="122" r="121.5" stroke="#55EC20" stroke-opacity="0.5"
+                                        stroke-dasharray="4 4" />
+                                </svg>
+                            </div>
+                            <div class="inner-wheel wheel">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="217" height="217" viewBox="0 0 217 217"
+                                    fill="none">
+                                    <circle cx="108.5" cy="108.5" r="108.5" fill="#1E1E1E" />
+                                    <circle cx="108.5" cy="108.5" r="108" stroke="#55EC20" stroke-opacity="0.75"
+                                        stroke-dasharray="4 4" />
+                                </svg>
                             </div>
                         </div>
-                        <div class="high-low-web" id="highLow">
-                            <div id="lowest" class="lowest-web">
-                                <div id="lowestText" class="lowestText-web">
-                                    <p>PR. KWH</p>
-                                </div>
-                            </div>
-                            <div id="highest" class="highest-web">
-                                <div id="highestText" class="highestText-web">
-                                    <p>PR. KWH</p>
-                                </div>
+                    </div>
+                    <div class="high-low-web" id="highLow">
+                        <div id="lowest" class="lowest-web">
+                            <div id="lowestText" class="lowestText-web">
+                                <p>PR. KWH</p>
                             </div>
                         </div>
-                        <div class="high-low-price-web">
-                            <p>Laveste Pris</p>
-                            <p>Højeste Pris</p>
+                        <div id="highest" class="highest-web">
+                            <div id="highestText" class="highestText-web">
+                                <p>PR. KWH</p>
+                            </div>
                         </div>
-                        <div class="footer-info-web">
-                            <p>Priserne er <span>ex. moms</span> og afgifter</p>
-                            <p>Du vises lige nu priserne for <span>Øst Danmark</span></p>
+                    </div>
+                    <div class="high-low-price-web">
+                        <p>Laveste Pris</p>
+                        <p>Højeste Pris</p>
+                    </div>
+                    <div class="footer-info-web">
+                        <p>Priserne er <span>ex. moms</span> og afgifter</p>
+                        <p>Du vises lige nu priserne for <span>Øst Danmark</span></p>
+                    </div>
+                </section>
+            </section>
+            <section class="sectionTwo-web">
+                <h2>Oversigt</h2>
+                <div id="oversigtData">
+                    <div class="high-low" id="highLow">
+                        <div id="lowest">
+                            <div id="lowestText">
+                                <p>PR. KWH</p>
+                            </div>
                         </div>
-                    </section>
+                        <div id="highest">
+                            <div id="highestText">
+                                <p>PR. KWH</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="high-low-price">
+                        <p>Laveste Pris</p>
+                        <p>Højeste Pris</p>
+                    </div>
                 </div>
-                <!-- OVERSIGT -->
-                <div class="sectionTwo-web">
-                    <section>
-                        <h2>Oversigt</h2>
-                        <div id="oversigtData" class="oversigtData-web">
+            </section>
+            <section class="sectionThree-web">
+                <section>
+                    <h2>Historik</h2>
+        
+                    <div id="chooseDay" class="chooseDay-web">
+                        <p id="dateInput"></p>
+                        <div>
+                            <i class="fa-solid fa-calendar-days"></i>
                         </div>
-                    </section>
+                    </div>
+                    <div id="historikData">
+        
+                    </div>
+                </section>
+            </section>
+        </div>
+        <footer>
+            <p>Priserne er <span>ex. moms</span> og afgifter</p>
+            <p>Du vises lige nu priserne for <span>Øst Danmark</span></p>
+        </footer>
+    </div>
+    <div id="modalContainer" class="modal-container">
+        <div id="modalContent">
+            <div id="closeModal"><i class="fa-regular fa-circle-xmark"></i></div>
+            <section>
+                <h2 style="margin-top: 59px;" class="Indstillinger-h2">Indstillinger</h2>
+                <div id="settings_moms">
+                  <p>Priser inkl. moms</p>
+                  <div id="moms_toggle_btn">
+                    <div id="moms_toggle_switch"></div>
+                  </div>
                 </div>
-                <!-- HISTORIK -->
-                <div class="sectionThree">
-                    <section>
-                        <h2>Historik</h2>
-
-                        <div id="chooseDay" class="chooseDay-web">
-                            <p id="dateInput"></p>
-                            <div>
-                                <i class="fa-solid fa-calendar-days"></i>
-                            </div>
-                        </div>
-                        <div id="historikData">
-
-                        </div>
-                    </section>
+                <div id="settings_alarm">
+                  <p>Laveste pris alarm</p>
+                  <div id="alarm_toggle_btn">
+                    <div id="alarm_toggle_switch"></div>
+                  </div>
                 </div>
-            </div>
+                <div id="settings_region">
+                  <p>Vælg region</p>
+                  <div class="chooseRegionDropdown" id="regionDropdown">
+                    <p>Vælg Region</p><svg id="rotatable-svg" xmlns="http://www.w3.org/2000/svg" width="11" height="7"
+                      viewBox="0 0 11 7" fill="none">
+                      <path
+                        d="M5.41905 0.161872L9.89463 4.63747C10.1105 4.85333 10.1105 5.20328 9.89463 5.41911L9.37262 5.94112C9.15714 6.1566 8.8079 6.15702 8.59191 5.94204L5.02822 2.39504L1.46455 5.94204C1.24856 6.15701 0.899323 6.1566 0.683837 5.94112L0.161833 5.41911C-0.0540208 5.20326 -0.0540208 4.8533 0.161833 4.63747L4.63739 0.161871C4.85324 -0.0539589 5.2032 -0.0539588 5.41905 0.161872Z"
+                        fill="#55EC20" />
+                    </svg>
+                    <div class="dropdown-content">
+                      <p class="region_east">Region øst</p>
+                      <p class="region_west">Region vest</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
         </div>
     </div>
 </body>

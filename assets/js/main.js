@@ -79,8 +79,7 @@ function displayData(data) {
     pricesForNext24Hours.forEach((interval, index) => {
         const oversigtTextDiv = document.createElement("div");
         oversigtTextDiv.classList.add("oversigtText");
-        oversigtDiv.appendChild(oversigtTextDiv);
-
+        
         const startTime = new Date(interval.time_start);
         const startTimeStr = formatTime(startTime);
 
@@ -91,6 +90,7 @@ function displayData(data) {
 
         oversigtTextDiv.appendChild(timeIntervalText);
         oversigtTextDiv.appendChild(oversigtPris);
+        oversigtDiv.appendChild(oversigtTextDiv);
     });
 
     // Add the "oversigt" div to the "oversigtData" div
