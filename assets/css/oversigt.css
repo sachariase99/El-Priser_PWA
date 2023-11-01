@@ -71,6 +71,10 @@ section #oversigtData #oversigt .oversigtText {
     font-weight: 400;
 }
 
+section #oversigtData #oversigt .oversigtText:last-child {
+    margin-bottom: 100px;
+}
+
 section #oversigtData #oversigt .oversigtText p:first-child {
     color: var(--whiteish);
     font-size: 15px;
