@@ -65,10 +65,10 @@ const highestPriceTextDiv = document.getElementById('highestText'); // Select th
 console.log(highestPriceTextDiv); // Log the selected element
 
 const lowestPriceWebTextDiv = document.getElementById('lowestTextWeb'); // Select the 'lowest' div
-console.log(lowestPriceTextDiv); // Log the selected element
+console.log(lowestPriceWebTextDiv); // Log the selected element
 
 const highestPriceWebTextDiv = document.getElementById('highestTextWeb'); // Select the 'highest' div
-console.log(highestPriceTextDiv); // Log the selected element
+console.log(highestPriceWebTextDiv); // Log the selected element
 
 // Clear existing content in the lowestText and highestText divs
 lowestPriceTextDiv.innerHTML = '';
@@ -82,6 +82,12 @@ lowestPriceText.textContent = `${lowestPrice} KR`;
 
 const highestPriceText = document.createElement('p');
 highestPriceText.textContent = `${highestPrice} KR`;
+
+const lowestPriceTextKW = document.createElement('p');
+lowestPriceTextKW.textContent = `PR. KWH`;
+
+const highestPriceTextKW = document.createElement('p');
+highestPriceTextKW.textContent = `PR. KWH`;
 
 const lowestPriceWebText = document.createElement('p');
 lowestPriceWebText.textContent = `${lowestPrice} KR`;
@@ -98,6 +104,8 @@ highestPriceWebTextKW.textContent = `PR. KWH`;
 // Add the lowest and highest prices to the "lowestText" and "highestText" divs
 lowestPriceTextDiv.appendChild(lowestPriceText);
 highestPriceTextDiv.appendChild(highestPriceText);
+lowestPriceTextDiv.appendChild(lowestPriceTextKW);
+highestPriceTextDiv.appendChild(highestPriceTextKW)
 lowestPriceWebTextDiv.appendChild(lowestPriceWebText);
 highestPriceWebTextDiv.appendChild(highestPriceWebText);
 lowestPriceWebTextDiv.appendChild(lowestPriceWebTextKW);
@@ -207,3 +215,18 @@ function displayHistorikData(selectedDate, data) {
 // Initialize with the current date
 const currentDate = new Date();
 loadHistorikData(currentDate);
+
+
+
+// SERVICE WORKER
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/../../service-worker.js').then(function (registration) {
+        // Registration was successful
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function (error) {
+        // Registration failed
+        console.log('ServiceWorker registration failed: ', error);
+      });
+    });
+  }

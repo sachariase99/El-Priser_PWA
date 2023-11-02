@@ -31,7 +31,7 @@ section #oversigtData .high-low {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column-reverse;
+    flex-direction: column;
     z-index: 1;
     color: var(--whiteish);
     border: 1px dashed #55EC20;

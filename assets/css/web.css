@@ -183,7 +183,7 @@ section .oversigtData-web .high-low-web {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column-reverse;
+    flex-direction: column;
     z-index: 1;
     color: var(--whiteish);
     border: 1px dashed #55EC20;
@@ -192,19 +192,19 @@ section .oversigtData-web .high-low-web {
     border-radius: 50%;
 }
 
-.lowestText-web:last-child {
+.lowestText-web:first-child {
     font-size: 16px;
 }
 
-.lowestText-web:first-child {
+.lowestText-web:last-child {
     font-size: 10px;
 }
 
-.highestText-web:last-child {
+.highestText-web:first-child {
     font-size: 16px;
 }
 
-.highestText-web:first-child {
+.highestText-web:last-child {
     font-size: 10px;
 }
 
