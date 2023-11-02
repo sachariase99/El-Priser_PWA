@@ -53,26 +53,57 @@ function displayData(data) {
     const pricesForNext24Hours = extractPriceForNext24Hours(data);
 
     // Find the lowest and highest prices
-    const lowestPrice = Math.min(...pricesForNext24Hours.map(interval => interval.DKK_per_kWh));
-    const highestPrice = Math.max(...pricesForNext24Hours.map(interval => interval.DKK_per_kWh));
+const lowestPrice = Math.min(...pricesForNext24Hours.map(interval => interval.DKK_per_kWh));
+const highestPrice = Math.max(...pricesForNext24Hours.map(interval => interval.DKK_per_kWh));
 
-    const oversigtDataDiv = document.getElementById("oversigtData");
+const oversigtDataDiv = document.getElementById('oversigtData');
 
-    const lowestPriceTextDiv = document.getElementById('lowestText')
-    const highestPriceTextDiv = document.getElementById('highestText')
+const lowestPriceTextDiv = document.getElementById('lowestText'); // Select the 'lowest' div
+console.log(lowestPriceTextDiv); // Log the selected element
 
-    // Create elements for the lowest and highest prices
-    const lowestPriceText = document.createElement("p");
-    lowestPriceText.textContent = `${lowestPrice} KR`;
+const highestPriceTextDiv = document.getElementById('highestText'); // Select the 'highest' div
+console.log(highestPriceTextDiv); // Log the selected element
 
-    const highestPriceText = document.createElement("p");
-    highestPriceText.textContent = `${highestPrice} KR`;
+const lowestPriceWebTextDiv = document.getElementById('lowestTextWeb'); // Select the 'lowest' div
+console.log(lowestPriceTextDiv); // Log the selected element
 
-    // Add the lowest and highest prices to the "oversigtData" div
-    lowestPriceTextDiv.appendChild(lowestPriceText);
-    highestPriceTextDiv.appendChild(highestPriceText);
+const highestPriceWebTextDiv = document.getElementById('highestTextWeb'); // Select the 'highest' div
+console.log(highestPriceTextDiv); // Log the selected element
 
-    const oversigtDiv = document.createElement("div");
+// Clear existing content in the lowestText and highestText divs
+lowestPriceTextDiv.innerHTML = '';
+highestPriceTextDiv.innerHTML = '';
+lowestPriceWebTextDiv.innerHTML = '';
+highestPriceWebTextDiv.innerHTML = '';
+
+// Create elements for the lowest and highest prices
+const lowestPriceText = document.createElement('p');
+lowestPriceText.textContent = `${lowestPrice} KR`;
+
+const highestPriceText = document.createElement('p');
+highestPriceText.textContent = `${highestPrice} KR`;
+
+const lowestPriceWebText = document.createElement('p');
+lowestPriceWebText.textContent = `${lowestPrice} KR`;
+
+const highestPriceWebText = document.createElement('p');
+highestPriceWebText.textContent = `${highestPrice} KR`;
+
+const lowestPriceWebTextKW = document.createElement('p');
+lowestPriceWebTextKW.textContent = `PR. KWH`;
+
+const highestPriceWebTextKW = document.createElement('p');
+highestPriceWebTextKW.textContent = `PR. KWH`;
+
+// Add the lowest and highest prices to the "lowestText" and "highestText" divs
+lowestPriceTextDiv.appendChild(lowestPriceText);
+highestPriceTextDiv.appendChild(highestPriceText);
+lowestPriceWebTextDiv.appendChild(lowestPriceWebText);
+highestPriceWebTextDiv.appendChild(highestPriceWebText);
+lowestPriceWebTextDiv.appendChild(lowestPriceWebTextKW);
+highestPriceWebTextDiv.appendChild(highestPriceWebTextKW)
+
+    const oversigtDiv = document.createElement('div');
     oversigtDiv.id = "oversigt";
 
     // Display the price data for the next 24 hours

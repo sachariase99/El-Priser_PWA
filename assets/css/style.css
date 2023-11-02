@@ -57,7 +57,7 @@ section a .fa-gear {
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
     .navbar-web, .sectionOne-web, .sectionThree-web {
         display: none;
     }
@@ -67,5 +67,10 @@ section a .fa-gear {
     }
     .historyDiv:last-child {
         margin-bottom: 100px;
+    }
+    #lowestText, #highestText {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
