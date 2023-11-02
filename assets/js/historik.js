@@ -54,25 +54,28 @@ function displayHistorikData(selectedDate, data) {
     // Extract and display price data for the next 24 hours
     const pricesForNext24Hours = extractPriceForNext24Hours(data);
 
-    pricesForNext24Hours.forEach(interval => {
-        const startTime = new Date(interval.time_start);
-        const startTimeStr = formatTime(startTime);
-
-        // Create a new <p> element for the time
-        const timeText = document.createElement("p");
-        timeText.textContent = `kl. ${startTimeStr}`;
-
-        // Create a new <p> element for the price
-        const priceText = document.createElement("p");
-        priceText.textContent = `${interval.DKK_per_kWh} kr`;
-
-        const historyDiv = document.createElement("div");
-        historyDiv.classList.add("historyDiv");
-        document.getElementById('historikData').appendChild(historyDiv);
-        // Append both <p> elements to the container
-        historyDiv.appendChild(timeText);
-        historyDiv.appendChild(priceText);
-    });
+        pricesForNext24Hours.forEach(interval => {
+            const startTime = new Date(interval.time_start);
+            const startTimeStr = formatTime(startTime);
+        
+            // Create a new <p> element for the time
+            const timeText = document.createElement("p");
+            timeText.textContent = `kl. ${startTimeStr}`;
+        
+            // Round the price to 3 decimal places
+            const roundedPrice = interval.DKK_per_kWh.toFixed(3);
+            // Create a new <p> element for the price
+            const priceText = document.createElement("p");
+            priceText.textContent = `${roundedPrice} kr`;
+        
+            const historyDiv = document.createElement("div");
+            historyDiv.classList.add("historyDiv");
+            document.getElementById('historikData').appendChild(historyDiv);
+        
+            // Append both <p> elements to the container
+            historyDiv.appendChild(timeText);
+            historyDiv.appendChild(priceText);
+        });    
 }
 
 // Initialize with the current date

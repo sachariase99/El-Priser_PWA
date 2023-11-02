@@ -59,16 +59,12 @@ const highestPrice = Math.max(...pricesForNext24Hours.map(interval => interval.D
 const oversigtDataDiv = document.getElementById('oversigtData');
 
 const lowestPriceTextDiv = document.getElementById('lowestText'); // Select the 'lowest' div
-console.log(lowestPriceTextDiv); // Log the selected element
 
 const highestPriceTextDiv = document.getElementById('highestText'); // Select the 'highest' div
-console.log(highestPriceTextDiv); // Log the selected element
 
 const lowestPriceWebTextDiv = document.getElementById('lowestTextWeb'); // Select the 'lowest' div
-console.log(lowestPriceWebTextDiv); // Log the selected element
 
 const highestPriceWebTextDiv = document.getElementById('highestTextWeb'); // Select the 'highest' div
-console.log(highestPriceWebTextDiv); // Log the selected element
 
 // Clear existing content in the lowestText and highestText divs
 lowestPriceTextDiv.innerHTML = '';
@@ -78,27 +74,37 @@ highestPriceWebTextDiv.innerHTML = '';
 
 // Create elements for the lowest and highest prices
 const lowestPriceText = document.createElement('p');
-lowestPriceText.textContent = `${lowestPrice} KR`;
+lowestPriceText.classList.add('lowestPrice');
+const roundedLowestPrice = lowestPrice.toFixed(3); // Round to 3 decimal places
+lowestPriceText.textContent = `${roundedLowestPrice} KR`;
 
 const highestPriceText = document.createElement('p');
-highestPriceText.textContent = `${highestPrice} KR`;
+highestPriceText.classList.add('highestPrice');
+const roundedHighestPrice = highestPrice.toFixed(3); // Round to 3 decimal places
+highestPriceText.textContent = `${roundedHighestPrice} KR`;
 
 const lowestPriceTextKW = document.createElement('p');
+lowestPriceTextKW.classList.add('lowestPriceKW');
 lowestPriceTextKW.textContent = `PR. KWH`;
 
 const highestPriceTextKW = document.createElement('p');
+highestPriceTextKW.classList.add('highestPriceKW');
 highestPriceTextKW.textContent = `PR. KWH`;
 
 const lowestPriceWebText = document.createElement('p');
-lowestPriceWebText.textContent = `${lowestPrice} KR`;
+lowestPriceWebText.classList.add('lowestPrice')
+lowestPriceWebText.textContent = `${roundedLowestPrice} KR`;
 
 const highestPriceWebText = document.createElement('p');
-highestPriceWebText.textContent = `${highestPrice} KR`;
+highestPriceWebText.classList.add('highestPrice')
+highestPriceWebText.textContent = `${roundedHighestPrice} KR`;
 
 const lowestPriceWebTextKW = document.createElement('p');
+lowestPriceWebTextKW.classList.add('lowestPriceKW')
 lowestPriceWebTextKW.textContent = `PR. KWH`;
 
 const highestPriceWebTextKW = document.createElement('p');
+highestPriceWebTextKW.classList.add('highestPriceKW')
 highestPriceWebTextKW.textContent = `PR. KWH`;
 
 // Add the lowest and highest prices to the "lowestText" and "highestText" divs
@@ -115,22 +121,26 @@ highestPriceWebTextDiv.appendChild(highestPriceWebTextKW)
     oversigtDiv.id = "oversigt";
 
     // Display the price data for the next 24 hours
-    pricesForNext24Hours.forEach((interval, index) => {
-        const oversigtTextDiv = document.createElement("div");
-        oversigtTextDiv.classList.add("oversigtText");
-        
-        const startTime = new Date(interval.time_start);
-        const startTimeStr = formatTime(startTime);
+pricesForNext24Hours.forEach((interval, index) => {
+    const oversigtTextDiv = document.createElement("div");
+    oversigtTextDiv.classList.add("oversigtText");
 
-        const timeIntervalText = document.createElement("p");
-        timeIntervalText.textContent = `kl. ${startTimeStr}`;
-        const oversigtPris = document.createElement("p");
-        oversigtPris.textContent = `${interval.DKK_per_kWh} kr`;
+    const startTime = new Date(interval.time_start);
+    const startTimeStr = formatTime(startTime);
 
-        oversigtTextDiv.appendChild(timeIntervalText);
-        oversigtTextDiv.appendChild(oversigtPris);
-        oversigtDiv.appendChild(oversigtTextDiv);
-    });
+    const timeIntervalText = document.createElement("p");
+    timeIntervalText.textContent = `kl. ${startTimeStr}`;
+
+    // Round the price to 3 decimal places
+    const roundedPrice = interval.DKK_per_kWh.toFixed(3);
+    const oversigtPris = document.createElement("p");
+    oversigtPris.textContent = `${roundedPrice} kr`;
+
+    oversigtTextDiv.appendChild(timeIntervalText);
+    oversigtTextDiv.appendChild(oversigtPris);
+    oversigtDiv.appendChild(oversigtTextDiv);
+});
+
 
     // Add the "oversigt" div to the "oversigtData" div
     oversigtDataDiv.appendChild(oversigtDiv);
@@ -194,29 +204,30 @@ function displayHistorikData(selectedDate, data) {
     pricesForNext24Hours.forEach(interval => {
         const startTime = new Date(interval.time_start);
         const startTimeStr = formatTime(startTime);
-
+    
         // Create a new <p> element for the time
         const timeText = document.createElement("p");
         timeText.textContent = `kl. ${startTimeStr}`;
-
+    
+        // Round the price to 3 decimal places
+        const roundedPrice = interval.DKK_per_kWh.toFixed(3);
         // Create a new <p> element for the price
         const priceText = document.createElement("p");
-        priceText.textContent = `${interval.DKK_per_kWh} kr`;
-
+        priceText.textContent = `${roundedPrice} kr`;
+    
         const historyDiv = document.createElement("div");
         historyDiv.classList.add("historyDiv");
         document.getElementById('historikData').appendChild(historyDiv);
+    
         // Append both <p> elements to the container
         historyDiv.appendChild(timeText);
         historyDiv.appendChild(priceText);
-    });
+    });    
 }
 
 // Initialize with the current date
 const currentDate = new Date();
 loadHistorikData(currentDate);
-
-
 
 // SERVICE WORKER
 if ('serviceWorker' in navigator) {

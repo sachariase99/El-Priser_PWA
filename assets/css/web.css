@@ -192,6 +192,10 @@ section .oversigtData-web .high-low-web {
     border-radius: 50%;
 }
 
+.lowestPrice, .highestPrice {
+    font-size: 16px;
+}
+
 .lowestText-web:first-child {
     font-size: 16px;
 }

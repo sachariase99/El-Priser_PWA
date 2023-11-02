@@ -60,14 +60,18 @@ function displayligenuData(pricesForCurrentTime) {
         const ligenuTextDiv = document.createElement("div");
         ligenuTextDiv.classList.add("ligenuText");
         ligenuDiv.appendChild(ligenuTextDiv);
-
+    
+        // Round the price to 3 decimal places
+        const roundedPrice = interval.DKK_per_kWh.toFixed(3);
+        
         const ligenu = document.createElement("p");
         const ligenuKW = document.createElement("p");
-        ligenu.textContent = `${interval.DKK_per_kWh} KR`;
+        ligenu.textContent = `${roundedPrice} KR`;
         ligenuKW.textContent = `PR. KWH`;
         ligenuTextDiv.appendChild(ligenu);
         ligenuTextDiv.appendChild(ligenuKW);
     });
+    
 
     // Display the time interval
     const ligenuDataText = document.createElement("p");
