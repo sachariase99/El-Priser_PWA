@@ -1,5 +1,6 @@
 /* SECTION START HISTORIK */
 #chooseDay {
+    position: relative;
     margin: auto;
     margin-top: 49px;
     display: flex;
@@ -19,6 +20,24 @@
     font-size: 16px;
     font-weight: 300;
     padding: 0 0 0 30px;
+    background-color: transparent;
+    border: none;
+}
+
+input[type=date] {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 280px;
+    height: 46px;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+    /* color: transparent;
+    background: transparent; */
+    cursor: pointer;    
 }
 
 #chooseDay div {

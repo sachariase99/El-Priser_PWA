@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hold dig opdateret om aktuelle elpriser med vores hjemmeside. Få øjeblikkelige opdateringer, historiske data og indsigt i elektricitetspriserne i dit område. Træf informerede energivalg i dag">
+    <meta name="description"
+        content="Hold dig opdateret om aktuelle elpriser med vores hjemmeside. Få øjeblikkelige opdateringer, historiske data og indsigt i elektricitetspriserne i dit område. Træf informerede energivalg i dag">
+    <meta name="theme-color" content="#55EC20">
     <title>ElPrisen.nu - Oversigt</title>
     <link rel="icon" href="assets/images/mainIcon.ico">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -13,10 +14,8 @@
     <script src="assets/js/settingsModal.js" defer></script>
     <script src="assets/js/indstillinger.js" defer></script>
     <link rel="manifest" href="manifest.json" />
-
     <script src="https://kit.fontawesome.com/2330c46f9a.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
     <div id="container">
         <nav class="navbar-mobile">
@@ -54,9 +53,9 @@
                 </defs>
             </svg>
             <ul>
-                <li><a class="active" href="index.html">Oversigt</a></li>
-                <li><a href="assets/html/ligenu.html">Lige nu</a></li>
-                <li><a href="assets/html/historik.html">Historik</a></li>
+                <li><a class="active" href="index.html" aria-label="Go to Oversigt">Oversigt</a></li>
+                <li><a href="assets/html/ligenu.html" aria-label="Go to Lige nu">Lige nu</a></li>
+                <li><a href="assets/html/historik.html" aria-label="Go to Historik">Historik</a></li>
             </ul>
         </nav>
         <nav class="navbar-web">
@@ -95,8 +94,9 @@
             </svg>
             <div id="settingsWeb"><i class="fa-solid fa-gear"></i></div>
         </nav>
-            <a class="settings_mobile" href="assets/html/indstillinger.html"><i class="fa-solid fa-gear"></i></a>
-            <div class="gridElement-web">
+        <a class="settings_mobile" href="assets/html/indstillinger.html" aria-label="Open settings"><i
+                class="fa-solid fa-gear"></i></a>
+        <div class="gridElement-web">
             <section class="sectionOne-web">
                 <section>
                     <h2>Elprisen lige nu</h2>
@@ -166,15 +166,16 @@
             <section class="sectionThree-web">
                 <section>
                     <h2>Historik</h2>
-        
-                    <div id="chooseDay" class="chooseDay-web">
+
+                    <div id="chooseDay">
+                        <input type="date" name="date" id="dateInputCalendar" aria-label="Date Picker" aria-labelledby="Date Picker">
                         <p id="dateInput"></p>
                         <div>
                             <i class="fa-solid fa-calendar-days"></i>
                         </div>
                     </div>
                     <div id="historikData">
-        
+
                     </div>
                 </section>
             </section>
@@ -190,37 +191,34 @@
             <section>
                 <h2 style="margin-top: 59px;" class="Indstillinger-h2">Indstillinger</h2>
                 <div id="settings_moms">
-                  <p>Priser inkl. moms</p>
-                  <div id="moms_toggle_btn">
-                    <div id="moms_toggle_switch"></div>
-                  </div>
+                    <p>Priser inkl. moms</p>
+                    <div id="moms_toggle_btn">
+                        <div id="moms_toggle_switch"></div>
+                    </div>
                 </div>
                 <div id="settings_alarm">
-                  <p>Laveste pris alarm</p>
-                  <div id="alarm_toggle_btn">
-                    <div id="alarm_toggle_switch"></div>
-                  </div>
+                    <p>Laveste pris alarm</p>
+                    <div id="alarm_toggle_btn">
+                        <div id="alarm_toggle_switch"></div>
+                    </div>
                 </div>
                 <div id="settings_region">
-                  <p>Vælg region</p>
-                  <div class="chooseRegionDropdown" id="regionDropdown">
-                    <p>Vælg Region</p><svg id="rotatable-svg" xmlns="http://www.w3.org/2000/svg" width="11" height="7"
-                      viewBox="0 0 11 7" fill="none">
-                      <path
-                        d="M5.41905 0.161872L9.89463 4.63747C10.1105 4.85333 10.1105 5.20328 9.89463 5.41911L9.37262 5.94112C9.15714 6.1566 8.8079 6.15702 8.59191 5.94204L5.02822 2.39504L1.46455 5.94204C1.24856 6.15701 0.899323 6.1566 0.683837 5.94112L0.161833 5.41911C-0.0540208 5.20326 -0.0540208 4.8533 0.161833 4.63747L4.63739 0.161871C4.85324 -0.0539589 5.2032 -0.0539588 5.41905 0.161872Z"
-                        fill="#55EC20" />
-                    </svg>
-                    <div class="dropdown-content">
-                      <p class="region_east">Region øst</p>
-                      <p class="region_west">Region vest</p>
+                    <p>Vælg region</p>
+                    <div class="chooseRegionDropdown" id="regionDropdown">
+                        <p>Vælg Region</p><svg id="rotatable-svg" xmlns="http://www.w3.org/2000/svg" width="11"
+                            height="7" viewBox="0 0 11 7" fill="none">
+                            <path
+                                d="M5.41905 0.161872L9.89463 4.63747C10.1105 4.85333 10.1105 5.20328 9.89463 5.41911L9.37262 5.94112C9.15714 6.1566 8.8079 6.15702 8.59191 5.94204L5.02822 2.39504L1.46455 5.94204C1.24856 6.15701 0.899323 6.1566 0.683837 5.94112L0.161833 5.41911C-0.0540208 5.20326 -0.0540208 4.8533 0.161833 4.63747L4.63739 0.161871C4.85324 -0.0539589 5.2032 -0.0539588 5.41905 0.161872Z"
+                                fill="#55EC20" />
+                        </svg>
+                        <div class="dropdown-content">
+                            <p class="region_east">Region øst</p>
+                            <p class="region_west">Region vest</p>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </section>
+            </section>
         </div>
     </div>
 </body>
-
-</body>
-
 </html>

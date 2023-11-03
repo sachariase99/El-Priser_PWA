@@ -4,7 +4,8 @@
     "icons": [
         {
             "src": "assets/images/windows11/SmallTile.scale-100.png",
-            "sizes": "71x71"
+            "sizes": "71x71",
+            "purpose": "any maskable"
           },
           {
             "src": "assets/images/windows11/SmallTile.scale-125.png",
@@ -468,7 +469,7 @@
       ],
     "start_url": "./index.html",
     "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff"
+    "theme_color": "#55EC20",
+    "background_color": "#27282B"
   }
   

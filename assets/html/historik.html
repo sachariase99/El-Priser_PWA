@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Hold dig opdateret om aktuelle elpriser med vores hjemmeside. Få øjeblikkelige opdateringer, historiske data og indsigt i elektricitetspriserne i dit område. Træf informerede energivalg i dag">
+  <meta name="theme-color" content="#55EC20">
   <title>ElPrisen.nu - Historik</title>
   <link rel="icon" href="../images/mainIcon.ico">
   <link rel="stylesheet" href="../css/style.css">
@@ -12,7 +14,6 @@
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://kit.fontawesome.com/2330c46f9a.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
   <nav>
     <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 47 47" fill="none">
@@ -48,16 +49,16 @@
       </defs>
     </svg>
     <ul>
-      <li><a href="../../index.html">Oversigt</a></li>
-      <li><a href="ligenu.html">Lige nu</a></li>
-      <li><a class="active" href="historik.html">Historik</a></li>
+      <li><a href="../../index.html" aria-label="Go to Oversigt">Oversigt</a></li>
+      <li><a href="ligenu.html" aria-label="Go to Lige nu">Lige nu</a></li>
+      <li><a class="active" href="historik.html" aria-label="Go to Historik">Historik</a></li>
     </ul>
   </nav>
   <section>
-    <a href="indstillinger.html"><i class="fa-solid fa-gear"></i></a>
+    <a href="indstillinger.html" aria-label="Go to Settings"><i class="fa-solid fa-gear"></i></a>
     <h2>Historik</h2>
-
     <div id="chooseDay">
+      <input type="date" id="dateInputCalendar" aria-label="Date Picker" aria-labelledby="Date Picker">
       <p id="dateInput"></p>
       <div>
         <i class="fa-solid fa-calendar-days"></i>
@@ -67,7 +68,6 @@
       <p>Elpriserne D. <span id="currentDay"></span></p>
     </div>
     <div id="historikData">
-
     </div>
   </section>
   <footer>
@@ -75,5 +75,4 @@
     <p>Du vises lige nu priserne for <span>Øst Danmark</span></p>
   </footer>
 </body>
-
 </html>

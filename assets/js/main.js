@@ -1,6 +1,4 @@
-// oversigt.js
-
-// Function to get the current date in the format YYYY-MM-DD
+// oversigt
 function getCurrentDate() {
     const now = new Date();
     const year = now.getFullYear();
@@ -9,15 +7,12 @@ function getCurrentDate() {
     return `${year}/${month}-${day}`;
 }
 
-// Define the desired price class
-const priceClass = 'DK2'; // Replace with the desired price class
+const priceClass = 'DK2';
 
-// Function to format time to HH:mm
 function formatTime(dateTime) {
     return new Date(dateTime).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
 }
 
-// Make a GET request to the API using the current date
 fetch(`https://www.elprisenligenu.dk/api/v1/prices/${getCurrentDate()}_${priceClass}.json`)
     .then(response => {
         if (!response.ok) {
@@ -26,14 +21,12 @@ fetch(`https://www.elprisenligenu.dk/api/v1/prices/${getCurrentDate()}_${priceCl
         return response.json();
     })
     .then(data => {
-        // Call the function to display the data in the HTML
         displayData(data);
     })
     .catch(error => {
         console.error("Failed to retrieve data from the API:", error);
     });
 
-// Function to extract price data for the next 24 hours
 function extractPriceForNext24Hours(data) {
     const currentTime = new Date();
     const endTime = new Date(currentTime);
@@ -45,42 +38,35 @@ function extractPriceForNext24Hours(data) {
     });
 }
 
-// Function to display the extracted data in the HTML
 function displayData(data) {
-    console.log(data); // Debug: Print the data to the console
-
-    // Extract price data for the next 24 hours
     const pricesForNext24Hours = extractPriceForNext24Hours(data);
 
-    // Find the lowest and highest prices
 const lowestPrice = Math.min(...pricesForNext24Hours.map(interval => interval.DKK_per_kWh));
 const highestPrice = Math.max(...pricesForNext24Hours.map(interval => interval.DKK_per_kWh));
 
 const oversigtDataDiv = document.getElementById('oversigtData');
 
-const lowestPriceTextDiv = document.getElementById('lowestText'); // Select the 'lowest' div
+const lowestPriceTextDiv = document.getElementById('lowestText');
 
-const highestPriceTextDiv = document.getElementById('highestText'); // Select the 'highest' div
+const highestPriceTextDiv = document.getElementById('highestText');
 
-const lowestPriceWebTextDiv = document.getElementById('lowestTextWeb'); // Select the 'lowest' div
+const lowestPriceWebTextDiv = document.getElementById('lowestTextWeb');
 
-const highestPriceWebTextDiv = document.getElementById('highestTextWeb'); // Select the 'highest' div
+const highestPriceWebTextDiv = document.getElementById('highestTextWeb');
 
-// Clear existing content in the lowestText and highestText divs
 lowestPriceTextDiv.innerHTML = '';
 highestPriceTextDiv.innerHTML = '';
 lowestPriceWebTextDiv.innerHTML = '';
 highestPriceWebTextDiv.innerHTML = '';
 
-// Create elements for the lowest and highest prices
 const lowestPriceText = document.createElement('p');
 lowestPriceText.classList.add('lowestPrice');
-const roundedLowestPrice = lowestPrice.toFixed(3); // Round to 3 decimal places
+const roundedLowestPrice = lowestPrice.toFixed(3);
 lowestPriceText.textContent = `${roundedLowestPrice} KR`;
 
 const highestPriceText = document.createElement('p');
 highestPriceText.classList.add('highestPrice');
-const roundedHighestPrice = highestPrice.toFixed(3); // Round to 3 decimal places
+const roundedHighestPrice = highestPrice.toFixed(3);
 highestPriceText.textContent = `${roundedHighestPrice} KR`;
 
 const lowestPriceTextKW = document.createElement('p');
@@ -107,7 +93,6 @@ const highestPriceWebTextKW = document.createElement('p');
 highestPriceWebTextKW.classList.add('highestPriceKW')
 highestPriceWebTextKW.textContent = `PR. KWH`;
 
-// Add the lowest and highest prices to the "lowestText" and "highestText" divs
 lowestPriceTextDiv.appendChild(lowestPriceText);
 highestPriceTextDiv.appendChild(highestPriceText);
 lowestPriceTextDiv.appendChild(lowestPriceTextKW);
@@ -120,7 +105,6 @@ highestPriceWebTextDiv.appendChild(highestPriceWebTextKW)
     const oversigtDiv = document.createElement('div');
     oversigtDiv.id = "oversigt";
 
-    // Display the price data for the next 24 hours
 pricesForNext24Hours.forEach((interval, index) => {
     const oversigtTextDiv = document.createElement("div");
     oversigtTextDiv.classList.add("oversigtText");
@@ -131,7 +115,6 @@ pricesForNext24Hours.forEach((interval, index) => {
     const timeIntervalText = document.createElement("p");
     timeIntervalText.textContent = `kl. ${startTimeStr}`;
 
-    // Round the price to 3 decimal places
     const roundedPrice = interval.DKK_per_kWh.toFixed(3);
     const oversigtPris = document.createElement("p");
     oversigtPris.textContent = `${roundedPrice} kr`;
@@ -141,15 +124,11 @@ pricesForNext24Hours.forEach((interval, index) => {
     oversigtDiv.appendChild(oversigtTextDiv);
 });
 
-
-    // Add the "oversigt" div to the "oversigtData" div
     oversigtDataDiv.appendChild(oversigtDiv);
 }
 
 
-//historik.js
-
-// Function to extract price data for the next 24 hours
+// Historik
 function extractPriceForNext24Hours(data) {
     const currentTime = new Date();
     const endTime = new Date(currentTime);
@@ -168,9 +147,8 @@ function formatTime(date) {
 }
 
 function loadHistorikData(selectedDate) {
-    const priceClass = 'DK2'; // Replace with the desired price class
+    const priceClass = 'DK2';
 
-    // Format the selected date manually as required by the API (YYYY/MM-DD)
     const formattedDate = selectedDate.getFullYear() + '/' +
         (selectedDate.getMonth() + 1).toString().padStart(2, '0') + '-' +
         selectedDate.getDate().toString().padStart(2, '0');
@@ -183,7 +161,6 @@ function loadHistorikData(selectedDate) {
             return response.json();
         })
         .then(data => {
-            // Call the function to display the data in the HTML
             displayHistorikData(selectedDate, data);
         })
         .catch(error => {
@@ -192,26 +169,20 @@ function loadHistorikData(selectedDate) {
 }
 
 function displayHistorikData(selectedDate, data) {
-    // Clear previous data
     document.getElementById("historikData").innerHTML = '';
 
-    // Display the date
     document.getElementById("dateInput").textContent = selectedDate.toLocaleDateString("en-US");
 
-    // Extract and display price data for the next 24 hours
     const pricesForNext24Hours = extractPriceForNext24Hours(data);
 
     pricesForNext24Hours.forEach(interval => {
         const startTime = new Date(interval.time_start);
         const startTimeStr = formatTime(startTime);
     
-        // Create a new <p> element for the time
         const timeText = document.createElement("p");
         timeText.textContent = `kl. ${startTimeStr}`;
     
-        // Round the price to 3 decimal places
         const roundedPrice = interval.DKK_per_kWh.toFixed(3);
-        // Create a new <p> element for the price
         const priceText = document.createElement("p");
         priceText.textContent = `${roundedPrice} kr`;
     
@@ -219,25 +190,29 @@ function displayHistorikData(selectedDate, data) {
         historyDiv.classList.add("historyDiv");
         document.getElementById('historikData').appendChild(historyDiv);
     
-        // Append both <p> elements to the container
         historyDiv.appendChild(timeText);
         historyDiv.appendChild(priceText);
     });    
 }
 
-// Initialize with the current date
-const currentDate = new Date();
-loadHistorikData(currentDate);
+document.addEventListener("DOMContentLoaded", function () {
+    const currentDate = new Date();
+    loadHistorikData(currentDate);
 
-// SERVICE WORKER
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/../../service-worker.js').then(function (registration) {
-        // Registration was successful
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      }, function (error) {
-        // Registration failed
-        console.log('ServiceWorker registration failed: ', error);
-      });
+    const dateInputCalendar = document.getElementById("dateInputCalendar");
+
+    dateInputCalendar.addEventListener("change", function () {
+        const selectedDate = new Date(dateInputCalendar.value);
+        loadHistorikData(selectedDate);
     });
-  }
+});
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+    .then(function(registration) {
+        console.log('ServiceWorker registration successful with scope:', registration.scope);
+    })
+    .catch(function(error) {
+        console.log('ServiceWorker registration failed:', error);
+    });
+}

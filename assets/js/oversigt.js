@@ -1,6 +1,3 @@
-// oversigt.js
-
-// Function to get the current date in the format YYYY-MM-DD
 function getCurrentDate() {
     const now = new Date();
     const year = now.getFullYear();
@@ -9,15 +6,12 @@ function getCurrentDate() {
     return `${year}/${month}-${day}`;
 }
 
-// Define the desired price class
-const priceKlasse = 'DK2'; // Replace with the desired price class
+const priceKlasse = 'DK2';
 
-// Function to format time to HH:mm
 function formatTime(dateTime) {
     return new Date(dateTime).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
 }
 
-// Make a GET request to the API using the current date
 fetch(`https://www.elprisenligenu.dk/api/v1/prices/${getCurrentDate()}_${priceKlasse}.json`)
     .then(response => {
         if (!response.ok) {
@@ -33,7 +27,6 @@ fetch(`https://www.elprisenligenu.dk/api/v1/prices/${getCurrentDate()}_${priceKl
         console.error("Failed to retrieve data from the API:", error);
     });
 
-// Function to extract price data for the next 24 hours
 function extractPriceForNext24Hours(data) {
     const currentTime = new Date();
     const endTime = new Date(currentTime);
@@ -45,14 +38,9 @@ function extractPriceForNext24Hours(data) {
     });
 }
 
-// Function to display the extracted data in the HTML
 function displayData(data) {
-    console.log(data); // Debug: Print the data to the console
-
-    // Extract price data for the next 24 hours
     const pricesForNext24Hours = extractPriceForNext24Hours(data);
 
-    // Find the lowest and highest prices
     const lowestPrice = Math.min(...pricesForNext24Hours.map(interval => interval.DKK_per_kWh));
     const highestPrice = Math.max(...pricesForNext24Hours.map(interval => interval.DKK_per_kWh));
 
@@ -61,21 +49,18 @@ function displayData(data) {
     const lowestPriceTextDiv = document.getElementById('lowestText')
     const highestPriceTextDiv = document.getElementById('highestText')
 
-    // Create elements for the lowest and highest prices
     const lowestPriceText = document.createElement("p");
     lowestPriceText.textContent = `${lowestPrice} KR`;
 
     const highestPriceText = document.createElement("p");
     highestPriceText.textContent = `${highestPrice} KR`;
 
-    // Add the lowest and highest prices to the "oversigtData" div
     lowestPriceTextDiv.appendChild(lowestPriceText);
     highestPriceTextDiv.appendChild(highestPriceText);
 
     const oversigtDiv = document.createElement("div");
     oversigtDiv.id = "oversigt";
 
-    // Display the price data for the next 24 hours
     pricesForNext24Hours.forEach((interval, index) => {
         const oversigtTextDiv = document.createElement("div");
         oversigtTextDiv.classList.add("oversigtText");
@@ -93,6 +78,5 @@ function displayData(data) {
         oversigtTextDiv.appendChild(oversigtPris);
     });
 
-    // Add the "oversigt" div to the "oversigtData" div
     oversigtDataDiv.appendChild(oversigtDiv);
 }
